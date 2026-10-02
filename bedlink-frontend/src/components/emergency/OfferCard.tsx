@@ -2,6 +2,7 @@ import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/Button";
 import { Badge, StatusBadge } from "@/components/ui/Badge";
 import { FreshnessIndicator } from "@/components/status/FreshnessIndicator";
+import { ETAIndicator } from "@/components/status/ETAIndicator";
 import { OfferStatus } from "@/components/status/OfferStatus";
 import { HoldStatus, HoldState } from "@/components/status/HoldStatus";
 import { ConfirmationTimer } from "@/components/status/ConfirmationTimer";

@@ -1,4 +1,5 @@
 import { cn } from "@/lib/cn";
+import { Label } from "@/components/ui/Label";
 
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {

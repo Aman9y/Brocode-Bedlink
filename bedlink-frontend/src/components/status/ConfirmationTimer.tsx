@@ -1,4 +1,5 @@
 import { cn } from "@/lib/cn";
+import { Clock } from "lucide-react";
 
 export interface ConfirmationTimerProps
   extends React.HTMLAttributes<HTMLSpanElement> {

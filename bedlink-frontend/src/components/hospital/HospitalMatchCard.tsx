@@ -6,7 +6,8 @@ import { AvailabilityIndicator } from "@/components/status/AvailabilityIndicator
 import { LoadIndicator } from "@/components/status/LoadIndicator";
 import { MatchScore } from "@/components/status/MatchScore";
 import { ETAIndicator } from "@/components/status/ETAIndicator";
-import { HoldStatus, OfferStatus } from "@/components/status/OfferStatus";
+import { HoldStatus } from "@/components/status/HoldStatus";
+import { OfferStatus } from "@/components/status/OfferStatus";
 
 export interface HospitalMatchCardProps
   extends React.HTMLAttributes<HTMLDivElement> {

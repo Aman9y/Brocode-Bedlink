@@ -1,30 +1,24 @@
+"use client";
+
 import { cn } from "@/lib/cn";
 import { Checkbox } from "@/components/ui/Checkbox";
 
 export interface RequirementOption {
   id: string;
   label: string;
-  /** Outline = not selected; filled = selected */
-  selected?: boolean;
 }
 
-export interface RequirementSelectorProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-    /** Options available (e.g. required care) */
-    options: RequirementOption[];
-    /** Which are selected */
-    selected: string[];
-    /** Whether multiple selection is allowed */
-    multiple?: boolean;
-    /** On change */
-    onChange: (values: string[]) => void;
-    /** Header label for the section */
-    header?: string;
-    /** Show "all" checkbox */
-    showAll?: boolean;
-    /** All option value */
-    allValue?: string;
-  }
+export interface RequirementSelectorProps {
+  options: RequirementOption[];
+  selected: string[];
+  multiple?: boolean;
+  /** Custom onChange for requirement selection */
+  onChange?: (values: string[]) => void;
+  header?: string;
+  showAll?: boolean;
+  allValue?: string;
+  className?: string;
+}
 
 /**
  * RequirementSelector — multi-select chips for required care
@@ -42,6 +36,7 @@ export function RequirementSelector({
   ...props
 }: RequirementSelectorProps) {
   const toggle = (id: string) => {
+    if (!onChange) return;
     if (showAll && id === allValue) {
       onChange(showAll ? [] : [allValue]);
       return;

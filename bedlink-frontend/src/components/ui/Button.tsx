@@ -1,9 +1,12 @@
+"use client";
+
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/cn";
+import { type ReactNode } from "react";
 
 /**
  * Button component built on class-variance-authority.
- * Tailwind-merge guarantees consistent button rhythm across the app.
+ * Client component - interacts with user events.
  */
 const buttonVariants = cva(
   [
@@ -114,26 +117,32 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  leftIcon?: React.ReactNode;
-    rightIcon?: React.ReactNode;
+  /** Left-side icon (e.g. a search icon) */
+  leftIcon?: ReactNode;
+  /** Right-side icon */
+  rightIcon?: ReactNode;
+  /** Primary content of the button */
+  children?: ReactNode;
 }
 
-/**
- * Primary action button — used for the most important operational
- * action on any screen. Consistently 40px tall.
- */
+/** Primary action button — used for the most important operational action on any screen. Consistently 40px tall. */
 export function Button({
-  className,
-  variant,
-  size,
+  variant = "primary",
+  size = "md",
   leftIcon,
   rightIcon,
   children,
+  onClick,
+  disabled,
+  className,
   ...props
 }: ButtonProps) {
   return (
     <button
+      type="button"
       className={cn(buttonVariants({ variant, size }), className)}
+      onClick={onClick}
+      disabled={disabled}
       {...props}
     >
       {leftIcon && <span className="shrink-0">{leftIcon}</span>}

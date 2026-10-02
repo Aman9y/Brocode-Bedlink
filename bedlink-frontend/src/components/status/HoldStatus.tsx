@@ -1,5 +1,5 @@
 import { cn } from "@/lib/cn";
-import { CircleCheck, CircleX, Clock } from "lucide-react";
+import { CircleCheck, CircleX, Clock, Circle } from "lucide-react";
 
 export type HoldState = "held" | "pending" | "expired" | "none";
 

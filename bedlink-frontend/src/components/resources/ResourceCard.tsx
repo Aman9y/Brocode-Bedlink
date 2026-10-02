@@ -1,7 +1,6 @@
 import { cn } from "@/lib/cn";
 import { StatusBadge } from "@/components/ui/Badge";
 import { AvailabilityIndicator } from "@/components/status/AvailabilityIndicator";
-import { cn } from "@/lib/cn";
 
 export interface ResourceCardProps
   extends React.HTMLAttributes<HTMLDivElement> {

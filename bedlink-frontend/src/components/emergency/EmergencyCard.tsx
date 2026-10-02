@@ -6,7 +6,7 @@ import { MatchScore } from "@/components/status/MatchScore";
 import { ETAIndicator } from "@/components/status/ETAIndicator";
 import { OfferStatus } from "@/components/status/OfferStatus";
 import { HoldStatus } from "@/components/status/HoldStatus";
-import { Lightning } from "lucide-react";
+import { Zap } from "lucide-react";
 
 export interface EmergencyCardProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -100,7 +100,7 @@ export function EmergencyCard({
           )}
           aria-hidden="true"
         >
-          <Lightning className="size-4" strokeWidth={2.5} />
+          <Zap className="size-4" strokeWidth={2.5} />
         </div>
       </div>
 

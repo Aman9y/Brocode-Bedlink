@@ -1,4 +1,5 @@
 import { cn } from "@/lib/cn";
+import { Label } from "@/components/ui/Label";
 import { ChevronDown } from "lucide-react";
 
 export interface SelectOption {

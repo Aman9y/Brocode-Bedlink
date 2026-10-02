@@ -1,18 +1,24 @@
+"use client";
+
 import { cn } from "@/lib/cn";
 import { Check } from "lucide-react";
 import { forwardRef } from "react";
 
 export interface CheckboxProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-    /** Render with label styling */
-    label?: string;
-  }
+  /** Render with label styling */
+  label?: string;
+  /** React Hook Form / TanStack compatible onCheckedChange handler */
+  onCheckedChange?: (checked: boolean) => void;
+}
 
-/**
- * Checkbox — visible label, keyboard accessible, no color-only meaning.
- */
+/** Checkbox — visible label, keyboard accessible, no color-only meaning. */
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-  ({ className, label, id, ...props }, ref) => {
+  ({ className, label, id, onCheckedChange, ...props }, ref) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      onCheckedChange?.(e.target.checked);
+    };
+
     return (
       <label
         className={cn(
@@ -34,6 +40,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             "sr-only"
           )}
           type="checkbox"
+          onChange={handleChange}
           {...props}
         />
         <span

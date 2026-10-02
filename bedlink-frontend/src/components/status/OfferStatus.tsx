@@ -1,5 +1,5 @@
 import { cn } from "@/lib/cn";
-import { CircleCheck, Clock, AlertTriangle, Phone } from "lucide-react";
+import { CircleCheck, CircleX, Clock, AlertTriangle, Phone, Circle } from "lucide-react";
 
 export type OfferState = "sent" | "accepted" | "rejected" | "timeout" | "none";
 

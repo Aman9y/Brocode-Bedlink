@@ -63,19 +63,16 @@ export function ConfirmDialog({
     danger: {
       icon: "bg-red-500/20",
       border: "border-red-500/30",
-      icon: "bg-red-500/20",
       button: "bg-red-500/20 hover:bg-red-500/30 text-red-500 border-red-500/30",
     },
     warning: {
       icon: "bg-orange-500/20",
       border: "border-orange-500/30",
-      icon: "bg-orange-500/20",
       button: "bg-orange-500/20 hover:bg-orange-500/30 text-orange-500 border-orange-500/30",
     },
     confirmation: {
       icon: "bg-primary/20",
       border: "border-primary/30",
-      icon: "bg-primary/20",
       button: "bg-primary text-white border-primary",
     },
   }[variant];
@@ -154,7 +151,7 @@ export function ConfirmDialog({
           </Button>
           <Button
             variant={variant === "danger" ? "danger" : "primary"}
-            onClick={() => onConfirm(reasonRequired ? null : undefined)}
+            onClick={() => onConfirm(undefined)}
           >
             {confirmLabel}
           </Button>

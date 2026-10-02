@@ -64,7 +64,6 @@ export function DialogPanel({
       <div className="flex items-start justify-between p-5 border-b border-border">
         <div className="flex-1">{children}</div>
       </div>
-      <div className="p-5">{props.children}</div>
     </div>
   );
 }
